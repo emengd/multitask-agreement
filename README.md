@@ -1,3 +1,5 @@
+This repository contains the code associated to the paper REF.
+
 The file model.py contains the implementation of a number of single or multi-task models.
 
 `LanguageModel`: Basic language model.
