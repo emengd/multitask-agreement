@@ -76,9 +76,25 @@ training and testing data in that order, and it also takes the arguments `nb_epo
 of training epochs), `early_stopping` (equivalent to the Keras callback of the same name),
 `verbose` (also transferred to Keras).
 
-Models can be saved and loaded back to fodlers using the `save` method and the `load_base_model`
+Models can be saved and loaded back to folders using the `save` method and the `load_base_model`
 function.
 
 ## Details: data
 
+The function `utils.deps_from_tsv` is designed to read
+[the following file](http://tallinzen.net/media/rnn_agreement/agr_50_mostcommon_10K.tsv.gz)
+provided [here](https://github.com/TalLinzen/rnn_agreement)
+(which is were `utils.py` is from as well).
 
+In the file `data.py`, you'll find among others the following functions:
+
+* `tsv_to_numpy(data)`: transforms the output of deps_to_tsv into our format
+
+* `apply_threshold_pos(data, thres)`: removes words less frequent than `thres` (`int`) and replaces
+    them with their POS tag. Returns a pair of the new data and the new lexicon (as a `set`).
+
+* `apply_threshold_void(data, thres, key='tag')`: same as above but replaces infrequent words with
+    `'_'` and can apply to any key.
+
+* `build_dicts(vocab)`: returns a pair of an int-to-word (`np.array`) and a word-to-int (`dict`)
+    token mapping from a lexicon (`set` or other iterable).
