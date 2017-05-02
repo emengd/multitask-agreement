@@ -1,5 +1,17 @@
 This repository contains the code associated to the paper REF.
 
+## Summary of files
+
+* `model.py`: models
+
+* `utils.py`: function to read the data from previous paper
+
+* `data.py`: other data-processing functions
+
+Dependencies:  Keras, pandas, inflect, numpy
+
+## Details: models
+
 The file model.py contains the implementation of a number of single or multi-task models.
 
 `LanguageModel`: Basic language model.
@@ -67,6 +79,6 @@ of training epochs), `early_stopping` (equivalent to the Keras callback of the s
 Models can be saved and loaded back to fodlers using the `save` method and the `load_base_model`
 function.
 
-
+## Details: data
 
 
