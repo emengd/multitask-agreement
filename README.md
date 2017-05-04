@@ -88,13 +88,19 @@ provided [here](https://github.com/TalLinzen/rnn_agreement)
 
 In the file `data.py`, you'll find among others the following functions:
 
-* `tsv_to_numpy(data)`: transforms the output of deps_to_tsv into our format
+* `tsv_to_numpy(data)`: transforms the output of deps_to_tsv into our format (as a `list` of numpy arrays)
+
+* `extract_ccg(folder)`: if `folder` is the "data" subfolder of the ccg-bank, extract the sentences
+    and the CCG tags. Returns a `list` of `dict`'s of numpy arrays (sentences are organised in
+    sections and then by ID).
 
 * `apply_threshold_pos(data, thres)`: removes words less frequent than `thres` (`int`) and replaces
     them with their POS tag. Returns a pair of the new data and the new lexicon (as a `set`).
 
 * `apply_threshold_void(data, thres, key='tag')`: same as above but replaces infrequent words with
     `'_'` and can apply to any key.
+
+* `apply_length_threshold(data, thres)`: remove sentences longer than `thres`.
 
 * `build_dicts(vocab)`: returns a pair of an int-to-word (`np.array`) and a word-to-int (`dict`)
     token mapping from a lexicon (`set` or other iterable).
