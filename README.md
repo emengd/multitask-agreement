@@ -1,4 +1,10 @@
-This repository contains the code associated to the paper REF.
+This repository contains the code associated to following paper:
+
+* Émile Enguehard, Yoav Goldberg, and Tal Linzen,
+  “Exploring the Syntactic Abilities of RNNs with Multi-task Learning”,
+  in *Proceedings of the 21st Conference on Computational Natural Language Learning*
+  (ConLL 2017), 2017
+  [(link)](http://www.aclweb.org/anthology/K/K17/)
 
 ## Summary of files
 
